@@ -1,0 +1,21 @@
+﻿生成启动时间为 2016/4/1 14:52:16。
+     1>项目“G:\Bank_Queue_System\Bank_Queue_System\Bank_Queue_System\Bank_Queue_System.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt bank.cpp bank2.cpp main.cpp
+         main.cpp
+     1>g:\bank_queue_system\bank_queue_system\bank_queue_system\main.cpp(18): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+         bank2.cpp
+     1>g:\bank_queue_system\bank_queue_system\bank_queue_system\bank2.cpp(84): warning C4018: “<”: 有符号/无符号不匹配
+         bank.cpp
+         正在生成代码...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\Bank_Queue_System\Bank_Queue_System\Debug\Bank_Queue_System.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"G:\Bank_Queue_System\Bank_Queue_System\Debug\Bank_Queue_System.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\Bank_Queue_System\Bank_Queue_System\Debug\Bank_Queue_System.lib" /MACHINE:X86 Debug\bank.obj
+         Debug\bank2.obj
+         Debug\customer.obj
+         Debug\main.obj
+         Bank_Queue_System.vcxproj -> G:\Bank_Queue_System\Bank_Queue_System\Debug\Bank_Queue_System.exe
+     1>已完成生成项目“G:\Bank_Queue_System\Bank_Queue_System\Bank_Queue_System\Bank_Queue_System.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:06.05
