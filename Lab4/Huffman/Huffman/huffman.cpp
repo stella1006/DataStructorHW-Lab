@@ -2,15 +2,7 @@
 #include <ctime>
 
 #define SIZE  100
-//void Encoding(char* a, char* b) {
-//	/*huffman h(a, b);
-//	h.creat_pq();
-//	h.create_huffman_tree();
-//	h.calculate_huffman_codes();
-//	h.save_to_file();
-//	cout << endl;*/
-//	cout << 1 << endl;
-//}
+
 
 
 int main(int argc, char *argv[]) {
@@ -20,9 +12,14 @@ int main(int argc, char *argv[]) {
 		exit(1);
 	}
 
-	/*Encoding(argv[1], argv[2]);*/
+	string inputfile = "D:\\", outputfile = "D:\\", codefile = "D:\\code.txt";
+	inputfile += argv[1];
+	inputfile += ".txt";
+	outputfile += argv[2];
+	outputfile += ".huf";
+
 	ofstream out;
-	out.open(argv[1]);
+	out.open(inputfile);
 	srand(time(0));
 	char c;
 	for (int i = 0; i < SIZE; i++) {
@@ -34,15 +31,12 @@ int main(int argc, char *argv[]) {
 
 
 
-	huffman h(argv[1], argv[2], "E:\\code.txt");
+	huffman h(inputfile, outputfile, "D:\\code.txt");
 	h.create_pq();
 	h.create_huffman_tree();
 	h.calculate_huffman_codes(h.root);
 	h.save_to_file();
 	cout << endl;
 	
-	//Decoding(argv[1], argv[2]);
-	
-	//system("pause");
 	return 0;
 }

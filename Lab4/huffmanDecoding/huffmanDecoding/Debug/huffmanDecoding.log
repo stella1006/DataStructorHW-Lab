@@ -1,15 +1,18 @@
-﻿生成启动时间为 2016/4/23 17:52:24。
-     1>项目“D:\李志容\数据结构与算法\实验\Lab4\huffmanDecoding\huffmanDecoding\huffmanDecoding.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2016/4/24 11:08:07。
+     1>项目“E:\gitSpace\DataStructorHW-Lab\Lab4\huffmanDecoding\huffmanDecoding\huffmanDecoding.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          D:\VS2012_ULT_chs(1)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt huffmanDecoding.cpp
          huffmanDecoding.cpp
-     1>d:\李志容\数据结构与算法\实验\lab4\huffmandecoding\huffmandecoding\huffman.h(197): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
-     1>d:\李志容\数据结构与算法\实验\lab4\huffmandecoding\huffmandecoding\huffman.h(283): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\gitspace\datastructorhw-lab\lab4\huffmandecoding\huffmandecoding\huffman.h(197): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>e:\gitspace\datastructorhw-lab\lab4\huffmandecoding\huffmandecoding\huffman.h(283): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\gitspace\datastructorhw-lab\lab4\huffmandecoding\huffmandecoding\huffman.h(358): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\gitspace\datastructorhw-lab\lab4\huffmandecoding\huffmandecoding\huffman.h(373): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\gitspace\datastructorhw-lab\lab4\huffmandecoding\huffmandecoding\huffman.h(391): warning C4018: “<”: 有符号/无符号不匹配
        Link:
-         D:\VS2012_ULT_chs(1)\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\李志容\数据结构与算法\实验\Lab4\huffmanDecoding\Debug\huffmanDecoding.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\李志容\数据结构与算法\实验\Lab4\huffmanDecoding\Debug\huffmanDecoding.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\李志容\数据结构与算法\实验\Lab4\huffmanDecoding\Debug\huffmanDecoding.lib" /MACHINE:X86 Debug\huffmanDecoding.obj
-         huffmanDecoding.vcxproj -> D:\李志容\数据结构与算法\实验\Lab4\huffmanDecoding\Debug\huffmanDecoding.exe
-     1>已完成生成项目“D:\李志容\数据结构与算法\实验\Lab4\huffmanDecoding\huffmanDecoding\huffmanDecoding.vcxproj”(Build 个目标)的操作。
+         D:\VS2012_ULT_chs(1)\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\gitSpace\DataStructorHW-Lab\Lab4\huffmanDecoding\Debug\huffmanDecoding.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\gitSpace\DataStructorHW-Lab\Lab4\huffmanDecoding\Debug\huffmanDecoding.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\gitSpace\DataStructorHW-Lab\Lab4\huffmanDecoding\Debug\huffmanDecoding.lib" /MACHINE:X86 Debug\huffmanDecoding.obj
+         huffmanDecoding.vcxproj -> E:\gitSpace\DataStructorHW-Lab\Lab4\huffmanDecoding\Debug\huffmanDecoding.exe
+     1>已完成生成项目“E:\gitSpace\DataStructorHW-Lab\Lab4\huffmanDecoding\huffmanDecoding\huffmanDecoding.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:01.67
+已用时间 00:00:01.86
