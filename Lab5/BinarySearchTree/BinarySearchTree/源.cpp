@@ -13,8 +13,8 @@ void visit(T d) {
 int main() {
 	srand((unsigned int)time(0));
 	BinTree<int> tree;
-	for (int i = 0; i < 20; i++) {   //generate N random numbers and insert them into the tree one by one
-		tree.insert(rand() % 15);
+	for (int i = 0; i < N; i++) {   //generate N random numbers and insert them into the tree one by one
+		tree.insert(rand() % MAX);
 	}
 	cout << "Level traverse:" << endl;
 	tree.print();
