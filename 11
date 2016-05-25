@@ -1,0 +1,125 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+int ROW;
+int COL;
+#define INF 10000
+int arc[101][101][101][101];
+
+bool valid(int a, int b, int r, int c) {
+	return a >= 0 && a < r && b >= 0 && b < c;
+}
+
+struct Graph {
+	int row, column;
+	int weight[101][101];
+	Graph();
+};
+
+Graph::Graph() {
+	cin >> row >> column;
+	memset(weight, 0, sizeof(weight));
+	memset(arc, INF, sizeof(arc));
+	int w = 0;
+	for (int i = 0; i < row; i++) {
+		for (int j = 0; j < column; j++) {
+			cin >> w;
+			weight[i][j] = w;
+		}
+	}
+
+	for (int i = 0; i < row; i++) {
+		for (int j = 0; j < column; j++) {
+			arc[i][j][i][j] = weight[i][j];
+			if (valid(i, j + 1, row, column)) arc[i][j][i][j + 1] = weight[i][j] + weight[i][j + 1];
+			if (valid(i, j - 1, row, column)) arc[i][j][i][j - 1] = weight[i][j] + weight[i][j - 1];
+			if (valid(i + 1, j, row, column)) arc[i][j][i + 1][j] = weight[i][j] + weight[i + 1][j];
+			if (valid(i - 1, j, row, column)) arc[i][j][i - 1][j] = weight[i][j] + weight[i - 1][j];
+
+		}
+	}
+
+}
+
+
+
+int shortestSumPath_Dijkstra(const Graph &G, int s0, int s1, int end0, int end1) { 
+	ROW = G.row;
+	COL = G.column;
+	int iR1, iC1;
+	int minD = INF;
+	bool S[101][101];
+	int D[101][101];
+	memset(D, INF, sizeof(D));
+	memset(S, 0, sizeof(S));
+
+	for (int i = 0; i < ROW; i++) {
+		for (int j = 0; j < COL; j++) {
+			D[i][j] = arc[s0][s1][i][j];
+			S[i][j] = false;
+			cout << D[i][j] << " ";
+		}
+		cout << endl;
+	}
+
+	S[s0][s1] = true;
+	for (int i = 0; i < ROW; i++) {
+		for (int j = 0; j < COL; j++) {
+			minD = INF;
+			for (int k = 0; k < ROW; k++) {
+				for (int p = 0; p < COL; p++) {
+					if (!S[k][p] && D[k][p] < minD) {
+						iR1 = k;
+						iC1 = p;
+						minD = D[k][p];
+					}
+				}
+			}
+			S[iR1][iC1] = true;
+			D[iR1][iC1] = minD;
+			//cout << iR1 << " " << iC1 << " " << minD << endl;
+			for (int k = 0; k < ROW; k++) {
+				for (int p = 0; p < COL; p++) {
+					if (!S[k][p] && (D[iR1][iC1] + arc[iR1][iC1][k][p]< D[k][p])) {
+						
+						D[k][p] = D[iR1][iC1] + arc[iR1][iC1][k][p];
+						
+						if (abs(iR1 - k) == 1 && abs(iC1 - p) == 0 || abs(iR1 - k) == 0 && abs(iC1 - p) == 1)
+							D[k][p] -= G.weight[iR1][iC1];
+						
+						
+					}
+					cout << k << " " << p << ": " << D[k][p] << endl;
+				}
+			}
+			//cout << D[i][j] << " " << endl;;
+		}
+		//cout << endl;
+	}
+	for (int i = 0; i < ROW; i++) {
+		for (int j = 0; j < COL; j++) {
+			cout << D[i][j] << " ";
+		}
+		cout << endl;
+	}
+	return D[end0][end1];
+	
+}
+
+int main() {
+	Graph g;
+	int a, b, c, d;
+	//cout << ROW << " " << COL << endl;
+	for (int i = 0; i < g.row; i++) {
+		for (int j = 0; j < g.column; j++) {
+			cout << g.weight[i][j] << " ";
+		}
+		cout << endl;
+	}
+	cin >> a >> b >> c >> d;
+	cout << shortestSumPath_Dijkstra(g, a-1, b-1, c-1, d-1) << endl;;
+	system("pause");
+	return 0;
+}
