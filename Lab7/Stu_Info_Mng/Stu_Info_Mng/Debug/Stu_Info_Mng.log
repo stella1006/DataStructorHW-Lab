@@ -1,0 +1,72 @@
+﻿生成启动时间为 2016/5/28 17:16:14。
+     1>项目“E:\gitSpace\DataStructorHW-Lab\Lab7\Stu_Info_Mng\Stu_Info_Mng\Stu_Info_Mng.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\VS2012_ULT_chs(1)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt "源.cpp"
+         源.cpp
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(64): warning C4018: “<”: 有符号/无符号不匹配
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(62): 编译类 模板 成员函数“void HashTable<HashObj>::print(void)”时
+                 with
+                 [
+                     HashObj=Student
+                 ]
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(12): 参见对正在编译的函数 模板 实例化“void HashTable<HashObj>::print(void)”的引用
+                 with
+                 [
+                     HashObj=Student
+                 ]
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(7): 参见对正在编译的类 模板 实例化“HashTable<HashObj>”的引用
+                 with
+                 [
+                     HashObj=Student
+                 ]
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(98): warning C4018: “>”: 有符号/无符号不匹配
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(93): 编译类 模板 成员函数“bool HashTable<HashObj>::insert(const HashObj &)”时
+                 with
+                 [
+                     HashObj=Student
+                 ]
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(10): 参见对正在编译的函数 模板 实例化“bool HashTable<HashObj>::insert(const HashObj &)”的引用
+                 with
+                 [
+                     HashObj=Student
+                 ]
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(42): warning C4018: “<”: 有符号/无符号不匹配
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(41): 编译类 模板 成员函数“void HashTable<HashObj>::makeEmpty(void)”时
+                 with
+                 [
+                     HashObj=Student
+                 ]
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(37): 参见对正在编译的函数 模板 实例化“void HashTable<HashObj>::makeEmpty(void)”的引用
+                 with
+                 [
+                     HashObj=Student
+                 ]
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(34): 编译类 模板 成员函数“HashTable<HashObj>::HashTable(int)”时
+                 with
+                 [
+                     HashObj=Student
+                 ]
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(7): 参见对正在编译的函数 模板 实例化“HashTable<HashObj>::HashTable(int)”的引用
+                 with
+                 [
+                     HashObj=Student
+                 ]
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(52): warning C4018: “<”: 有符号/无符号不匹配
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(49): 编译类 模板 成员函数“int HashTable<HashObj>::hash(const std::string &) const”时
+                 with
+                 [
+                     HashObj=Student
+                 ]
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(104): 参见对正在编译的函数 模板 实例化“int HashTable<HashObj>::hash(const std::string &) const”的引用
+                 with
+                 [
+                     HashObj=Student
+                 ]
+       Link:
+         D:\VS2012_ULT_chs(1)\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\gitSpace\DataStructorHW-Lab\Lab7\Stu_Info_Mng\Debug\Stu_Info_Mng.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\gitSpace\DataStructorHW-Lab\Lab7\Stu_Info_Mng\Debug\Stu_Info_Mng.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\gitSpace\DataStructorHW-Lab\Lab7\Stu_Info_Mng\Debug\Stu_Info_Mng.lib" /MACHINE:X86 "Debug\源.obj"
+         Stu_Info_Mng.vcxproj -> E:\gitSpace\DataStructorHW-Lab\Lab7\Stu_Info_Mng\Debug\Stu_Info_Mng.exe
+     1>已完成生成项目“E:\gitSpace\DataStructorHW-Lab\Lab7\Stu_Info_Mng\Stu_Info_Mng\Stu_Info_Mng.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.52
