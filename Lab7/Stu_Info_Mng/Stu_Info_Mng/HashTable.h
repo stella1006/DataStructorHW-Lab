@@ -63,13 +63,16 @@ void HashTable<HashObj>::print() {
 	const vector<list<HashObj> > V = getList();
 	for (int i = 0; i < V.size(); i++) {
 		list<HashObj> l = V[i];
-		cout << i << " ";
-		for (list<HashObj>::iterator j = l.begin(); j != l.end(); j++) {
-			if ((*j).getName() != "")
-				cout << (*j).getName() << " ";
+		if (!l.empty()) {
+
+			cout << i << " ";
+			for (list<HashObj>::iterator j = l.begin(); j != l.end(); j++) {
+				if ((*j).getName() != "")
+					cout << (*j).getName() << " ";
+			}
+			//if (!V[i].empty()) 
+				cout << endl;
 		}
-		//if (!V[i].empty()) 
-			cout << endl;
 	}
 }
 

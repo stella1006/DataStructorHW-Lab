@@ -18,7 +18,7 @@ public:
 
 	};
 
-	explicit HashOpen(int size = 107);
+	explicit HashOpen(int size = 1007);
 	void findKey(const string & s);
 	void makeEmpty();
 	void print();
@@ -44,7 +44,7 @@ private:
 };
 
 template <typename HashObj>
-HashOpen<HashObj>::HashOpen(int size = 107) {
+HashOpen<HashObj>::HashOpen(int size = 1007) {
 	currentSize = 0;
 	Varray.resize(size);
 	makeEmpty();
@@ -128,10 +128,12 @@ template <typename HashObj>
 void HashOpen<HashObj>::print() {
 	const vector<HashEntry> V = getArray();
 	for (int i = 0; i < V.size(); i++) {
-		cout << i << " ";
-		if (isActive(i)) 
+		
+		if (isActive(i)) {
+			cout << i << " ";
 			cout << V[i].element.getName() << endl;
-		else cout << endl;
+		}
+		//else cout << endl;
 	}
 }
 
