@@ -1,61 +1,81 @@
-﻿生成启动时间为 2016/6/3 0:07:31。
+﻿生成启动时间为 2016/6/3 17:19:40。
      1>项目“E:\gitSpace\DataStructorHW-Lab\Lab7\Stu_Info_Mng\Stu_Info_Mng\Stu_Info_Mng.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          D:\VS2012_ULT_chs(1)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt "源.cpp"
          源.cpp
-     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(18): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(43): warning C4018: “<”: 有符号/无符号不匹配
-     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(92): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
-     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(101): warning C4018: “>”: 有符号/无符号不匹配
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(96): 编译类 模板 成员函数“bool HashTable<HashObj>::insert(const HashObj &)”时
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(40): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(66): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(103): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(89): warning C4101: “i”: 未引用的局部变量
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(150): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable2.h(28): warning C4018: “>”: 有符号/无符号不匹配
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable2.h(23): 编译类 模板 成员函数“bool HashTable2<HashObj>::insert(const HashObj &)”时
+                 with
+                 [
+                     HashObj=std::string
+                 ]
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(106): 参见对正在编译的函数 模板 实例化“bool HashTable2<HashObj>::insert(const HashObj &)”的引用
+                 with
+                 [
+                     HashObj=std::string
+                 ]
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(106): 参见对正在编译的类 模板 实例化“HashTable2<HashObj>”的引用
+                 with
+                 [
+                     HashObj=std::string
+                 ]
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable2.h(19): warning C4018: “<”: 有符号/无符号不匹配
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable2.h(17): 编译类 模板 成员函数“void HashTable2<HashObj>::makeEmpty(void)”时
+                 with
+                 [
+                     HashObj=std::string
+                 ]
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable2.h(10): 参见对正在编译的函数 模板 实例化“void HashTable2<HashObj>::makeEmpty(void)”的引用
+                 with
+                 [
+                     HashObj=std::string
+                 ]
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable2.h(66): warning C4018: “>=”: 有符号/无符号不匹配
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable2.h(61): 编译类 模板 成员函数“int HashTable2<HashObj>::findPos(const HashObj &) const”时
+                 with
+                 [
+                     HashObj=std::string
+                 ]
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable2.h(14): 参见对正在编译的函数 模板 实例化“int HashTable2<HashObj>::findPos(const HashObj &) const”的引用
+                 with
+                 [
+                     HashObj=std::string
+                 ]
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable2.h(75): warning C4018: “<”: 有符号/无符号不匹配
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable2.h(72): 编译类 模板 成员函数“void HashTable2<HashObj>::rehash(void)”时
+                 with
+                 [
+                     HashObj=std::string
+                 ]
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable2.h(29): 参见对正在编译的函数 模板 实例化“void HashTable2<HashObj>::rehash(void)”的引用
+                 with
+                 [
+                     HashObj=std::string
+                 ]
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable2.h(78): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable2.h(86): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable2.h(83): 编译类 模板 成员函数“int HashTable2<HashObj>::myhash(const HashObj &) const”时
+                 with
+                 [
+                     HashObj=std::string
+                 ]
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable2.h(62): 参见对正在编译的函数 模板 实例化“int HashTable2<HashObj>::myhash(const HashObj &) const”的引用
+                 with
+                 [
+                     HashObj=std::string
+                 ]
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(41): warning C4018: “<”: 有符号/无符号不匹配
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(40): 编译类 模板 成员函数“void HashTable<HashObj>::makeEmpty(void)”时
                  with
                  [
                      HashObj=Student
                  ]
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(93): 参见对正在编译的函数 模板 实例化“bool HashTable<HashObj>::insert(const HashObj &)”的引用
-                 with
-                 [
-                     HashObj=Student
-                 ]
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(93): 参见对正在编译的类 模板 实例化“HashTable<HashObj>”的引用
-                 with
-                 [
-                     HashObj=Student
-                 ]
-     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashopenaddress.h(147): warning C4018: “>=”: 有符号/无符号不匹配
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashopenaddress.h(141): 编译类 模板 成员函数“void HashOpen<HashObj>::findKey(const std::string &)”时
-                 with
-                 [
-                     HashObj=Student
-                 ]
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(132): 参见对正在编译的函数 模板 实例化“void HashOpen<HashObj>::findKey(const std::string &)”的引用
-                 with
-                 [
-                     HashObj=Student
-                 ]
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(94): 参见对正在编译的类 模板 实例化“HashOpen<HashObj>”的引用
-                 with
-                 [
-                     HashObj=Student
-                 ]
-     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashopenaddress.h(111): warning C4018: “>”: 有符号/无符号不匹配
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashopenaddress.h(105): 编译类 模板 成员函数“bool HashOpen<HashObj>::insert(const HashObj &)”时
-                 with
-                 [
-                     HashObj=Student
-                 ]
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(94): 参见对正在编译的函数 模板 实例化“bool HashOpen<HashObj>::insert(const HashObj &)”的引用
-                 with
-                 [
-                     HashObj=Student
-                 ]
-     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(42): warning C4018: “<”: 有符号/无符号不匹配
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(41): 编译类 模板 成员函数“void HashTable<HashObj>::makeEmpty(void)”时
-                 with
-                 [
-                     HashObj=Student
-                 ]
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(37): 参见对正在编译的函数 模板 实例化“void HashTable<HashObj>::makeEmpty(void)”的引用
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(36): 参见对正在编译的函数 模板 实例化“void HashTable<HashObj>::makeEmpty(void)”的引用
                  with
                  [
                      HashObj=Student
@@ -65,61 +85,23 @@
                  [
                      HashObj=Student
                  ]
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(114): 参见对正在编译的函数 模板 实例化“HashTable<HashObj>::HashTable(int)”的引用
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(152): 参见对正在编译的函数 模板 实例化“HashTable<HashObj>::HashTable(int)”的引用
                  with
                  [
                      HashObj=Student
                  ]
-     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(52): warning C4018: “<”: 有符号/无符号不匹配
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(49): 编译类 模板 成员函数“int HashTable<HashObj>::hash(const std::string &) const”时
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(105): 参见对正在编译的类 模板 实例化“HashTable<HashObj>”的引用
                  with
                  [
                      HashObj=Student
                  ]
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(107): 参见对正在编译的函数 模板 实例化“int HashTable<HashObj>::hash(const std::string &) const”的引用
+     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(51): warning C4018: “<”: 有符号/无符号不匹配
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(48): 编译类 模板 成员函数“int HashTable<HashObj>::hash(const std::string &) const”时
                  with
                  [
                      HashObj=Student
                  ]
-     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashopenaddress.h(55): warning C4018: “<”: 有符号/无符号不匹配
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashopenaddress.h(54): 编译类 模板 成员函数“void HashOpen<HashObj>::makeEmpty(void)”时
-                 with
-                 [
-                     HashObj=Student
-                 ]
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashopenaddress.h(50): 参见对正在编译的函数 模板 实例化“void HashOpen<HashObj>::makeEmpty(void)”的引用
-                 with
-                 [
-                     HashObj=Student
-                 ]
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashopenaddress.h(47): 编译类 模板 成员函数“HashOpen<HashObj>::HashOpen(int)”时
-                 with
-                 [
-                     HashObj=Student
-                 ]
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\源.cpp(115): 参见对正在编译的函数 模板 实例化“HashOpen<HashObj>::HashOpen(int)”的引用
-                 with
-                 [
-                     HashObj=Student
-                 ]
-     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashopenaddress.h(72): warning C4018: “>=”: 有符号/无符号不匹配
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashopenaddress.h(66): 编译类 模板 成员函数“int HashOpen<HashObj>::findPos(const HashObj &) const”时
-                 with
-                 [
-                     HashObj=Student
-                 ]
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashopenaddress.h(106): 参见对正在编译的函数 模板 实例化“int HashOpen<HashObj>::findPos(const HashObj &) const”的引用
-                 with
-                 [
-                     HashObj=Student
-                 ]
-     1>e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashopenaddress.h(82): warning C4018: “<”: 有符号/无符号不匹配
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashopenaddress.h(79): 编译类 模板 成员函数“int HashOpen<HashObj>::hash(const std::string &) const”时
-                 with
-                 [
-                     HashObj=Student
-                 ]
-                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashopenaddress.h(143): 参见对正在编译的函数 模板 实例化“int HashOpen<HashObj>::hash(const std::string &) const”的引用
+                 e:\gitspace\datastructorhw-lab\lab7\stu_info_mng\stu_info_mng\hashtable.h(103): 参见对正在编译的函数 模板 实例化“int HashTable<HashObj>::hash(const std::string &) const”的引用
                  with
                  [
                      HashObj=Student
@@ -131,4 +113,4 @@
 
 生成成功。
 
-已用时间 00:00:03.56
+已用时间 00:00:02.69

@@ -64,6 +64,7 @@
   <ItemGroup>
     <ClInclude Include="HashOpenAddress.h" />
     <ClInclude Include="HashTable.h" />
+    <ClInclude Include="HashTable2.h" />
     <ClInclude Include="Student.h" />
   </ItemGroup>
   <ItemGroup>

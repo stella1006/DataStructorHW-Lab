@@ -24,6 +24,9 @@
     <ClInclude Include="HashOpenAddress.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="HashTable2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="源.cpp">
