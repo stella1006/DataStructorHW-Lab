@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <ctime>
 using namespace std;
 
 template <typename HashObj>
@@ -23,7 +24,7 @@ public:
 	bool insert(const HashObj & x);           //insert the object x
 	void findKey(const string & s);           //given key value find its whole information
 	void remove(const string & s);           //given key value remove its whole information
-
+	double cal_time(const string & s);        //calculate the time that use to find a key
 private:
 	vector<list<HashObj> > VList;     //Use vector to store the students' information 
 	int hash(const string & key) const;   //given key value find its hash address
@@ -85,7 +86,7 @@ int HashTable<HashObj>::myhash(const HashObj & x) const {   //given hashObject f
 template <typename HashObj>
 bool HashTable<HashObj>::contains(const HashObj & x) const {  
 	const list<HashObj> &whichList = VList[myhash(x)];   //get the list according to coressponding hash address of the object x
-	return find(whichList.begin(), whichList.end(), x) != whichList.end();
+	return (find(whichList.begin(), whichList.end(), x) != whichList.end());
 }
 
 
@@ -94,7 +95,7 @@ bool HashTable<HashObj>::insert(const HashObj & x) {
 	list<HashObj> &whichList = VList[myhash(x)];    //get the list according to coressponding hash address of the object x
 	if (!contains(x)) {    //if it isn't stored, store it
 		whichList.push_back(x);
-	} 
+	} else return false;
 	return true;
 }
 
@@ -114,6 +115,24 @@ void HashTable<HashObj>::findKey(const string & s) {
 			cout << "Gender: " << ((*itr).getSex() == 0? "Male":"Female")  << endl;		}
 	}
 	if (!isContained) cout << s <<" This ID is not contained in the system" << endl;
+}
+
+template <typename HashObj>
+double HashTable<HashObj>::cal_time(const string & s) {
+	
+	DWORD start, end;
+	start = timeGetTime();
+	int hashval = hash(s);    //find hash address of s
+	list<HashObj> &whichList = VList[hashval];  //get the list according to coressponding hash address of s
+	list<HashObj>::iterator itr = whichList.begin();
+	bool isContained = false;
+	for ( ; itr != whichList.end(); itr++) {  //traverse the corresponding list
+		if ((*itr).getID() == s) 
+			isContained = true;
+	}
+	if (!isContained) cout << s <<" This ID is not contained in the system" << endl;
+	end = timeGetTime();
+	return (double)((double)(end - start) / 1000);
 }
 
 template <typename HashObj>

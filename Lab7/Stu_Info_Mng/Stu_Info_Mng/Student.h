@@ -11,7 +11,7 @@ public:
 		ID = id;
 		name = n;
 		age = a;
-	    sex = s;
+	    gender = s;
 	}
 
 	const string & getID() const{
@@ -27,7 +27,7 @@ public:
 	}
 
 	const bool & getSex() const{
-		return sex;
+		return gender;
 	}
 
 	bool operator == (const Student & stu) const{
@@ -43,7 +43,7 @@ private:
 	string ID;   //student's ID nember
 	string name;  //student's name
 	int age;     //student's age
-	bool sex; //0 stands for male, 1 stands for female
+	bool gender; //0 stands for male, 1 stands for female
 
 };
 

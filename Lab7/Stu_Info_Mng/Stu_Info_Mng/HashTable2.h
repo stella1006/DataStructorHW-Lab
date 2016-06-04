@@ -1,5 +1,7 @@
 #include <vector>
 #include <cmath>
+#include <string>
+#include <ctime>
 using namespace std;
 
 template <typename HashObj> //int id
@@ -30,17 +32,59 @@ public:
 		return true;
 	}
 
-	bool remove(const HashObj& x) { //if suceed, return 1
-		int currentPos = findPos(x);
-		if (!isActive(currentPos)) //x doesn't exist in the table
+	bool remove(const string& x) { //if succeed, return 1
+		int currentPos = hash(x); //original position
+		while (array[currentPos].info != EMPTY && array[currentPos].element.id != x) { 
+		//terminate when the position is found or x already exists in the table
+			currentPos += 1; //linear probing
+			if (currentPos >= array.size()) //mod operation
+				currentPos -= array.size();
+		}
+		if (isActive(currentPos))
+			array[currentPos].info = DELETED; //set the information to be DELETED
+		else
 			return false;
-		array[currentPos].info = DELETED; //set the information to be DELETED
-		return true;
 	}
 
-	enum EntryType { ACTIVE, EMPTY, DELETED }; //three state of entry
+	void findKey(const string& x) {
+		int currentPos = hash(x); //original position
+		while (array[currentPos].info != EMPTY && array[currentPos].element.getID() != x) { 
+		//terminate when the position is found or x already exists in the table
+			currentPos += 1; //linear probing
+			if (currentPos >= array.size()) //mod operation
+				currentPos -= array.size();
+		}
+		if (isActive(currentPos)) {
+			cout << "Found successfully: " << endl;  //print the information that is found
+			cout << "Name: " << array[currentPos].element.getName() << endl;
+			cout << "ID: " << array[currentPos].element.getID() << endl;
+			cout << "Age: " << array[currentPos].element.getAge() << endl;
+			cout << "Gender: " << (array[currentPos].element.getSex() == 0? "Male":"Female")  << endl;		
+		}
 
-private:
+		else
+			cout << "Fail" << endl;
+	}
+
+	double cal_time(const string& x) {
+		DWORD start, end;
+		start = timeGetTime();
+		int currentPos = hash(x); //original position
+		while (array[currentPos].info != EMPTY && array[currentPos].element.getID() != x) { 
+		//terminate when the position is found or x already exists in the table
+			currentPos += 1; //linear probing
+			if (currentPos >= array.size()) //mod operation
+				currentPos -= array.size();
+		}
+
+		if (!isActive(currentPos)) cout << "Fail" << endl;
+			
+		end = timeGetTime();
+		//cout << (double)((double)(end - start) / 1000) << endl;
+		return (double)((double)(end - start) / 1000);
+	}
+
+	enum EntryType {ACTIVE, EMPTY, DELETED}; //three state of entry
 	struct HashEntry {
 		HashObj element;
 		EntryType info;
@@ -51,6 +95,15 @@ private:
 		}
 	};
 
+	vector<HashEntry> &getArray() {
+		return array;
+	}
+
+	
+
+private:
+	
+
 	vector<HashEntry> array;
 	int currentSize;
 
@@ -60,8 +113,8 @@ private:
 
 	int findPos(const HashObj& x) const { //find the position in the table corresponding to x
 		int currentPos = myhash(x); //original position
-		while (array[currentPos].info != EMPTY && array[currentPos].element != x) {
-			//terminate when the position is found or x already exists in the table
+		while (array[currentPos].info != EMPTY && array[currentPos].element != x) { 
+		//terminate when the position is found or x already exists in the table
 			currentPos += 1; //linear probing
 			if (currentPos >= array.size()) //mod operation
 				currentPos -= array.size();
@@ -80,12 +133,17 @@ private:
 				insert(oldArray[i].element);
 	}
 
-	int myhash(const HashObj& x) const { //hash function
-		int xVal = 0;
-		for (int i = 0; i < 3; i++)
+	int hash(const string& x) const { //hash function with argument of string type
+		int xVal = 0; //to store the value of the string
+		for (int i = 0; i < 3; i++) //last 4 bits since the array size is 101
 			xVal = xVal + pow(10, i) * (x[x.size() - 1 - i] - '0');
 		int currentPos = xVal % array.size(); //mod operation
 		return currentPos;
+	}
+
+	int myhash(const HashObj& x) const { //hash function with argument of HashObj type
+		string xStr = x.getID(); //get the key string of the object
+		return hash(xStr);
 	}
 };
 

@@ -8,35 +8,17 @@
 #include <ostream>
 #include <windows.h>
 #include <sstream>
+#include <iomanip>
+#include <Mmsystem.h>
+#pragma comment(lib, "Winmm.lib")
 using namespace std;
-
-
-class Information { //student information
-public:
-	string id;
-	string name;
-	int age;
-	bool gender;
-
-	Information(string i = "", string n = "", int a = 0, bool g = 0) { //consturctor
-		id = i;
-		name = n;
-		age = a;
-		gender = g;
-	}
-
-	/*int getId() {
-	int val = 0;
-	for (int i = 0; i < 4; i++)
-	val = val + pow(10, i) * (id[id.size() - 1 - i] - '0');
-	}*/
-};
+long long totalNumber;
 
 void create_stu() {
 	std::ofstream outfile;
 	outfile.open("E://info.txt", ios::ate);
-	for (int i = 0; i < 300; i++) {
-		Sleep(800);
+	for (int i = 0; i < 3000; i++) {
+		Sleep(900);
 		srand(time(0));
 		string id = "";
 		string name = "";
@@ -52,34 +34,26 @@ void create_stu() {
 
 		age = rand() % 30 + 18;
 		sex = rand() % 2;
-		//cout << id << " " << name << " " << age << " " << sex << endl;
 		outfile << id << " " << name << " " << age << " " << sex << endl;
 	}
 	outfile.close();
 
-	//Student stu(id, name, age, sex);
 	Student stu("", "", 0, 0);
 }
 int str_to_i(string s) {
-	//cout << s << endl;
 	int res = 0;
-	for (int i = 0; i < s.length(); i++) {
+	for (int i = 0; i < s.length(); i++) 
 		res = res * 10 + (s[i]-'0');
-	}
 	return res;
-
 }
 
 
-void read_stu(HashTable<Student> &h, HashTable2<string> & h2) {
+void read_stu(HashTable<Student> &h, HashTable2<Student> & h2) {
 	std::ifstream infile;
 	infile.open("E://info.txt", ios::in);
 	string line;
 	
-	
 	while(getline(infile, line)) {
-		//if (infile.fail()) break;
-		//cout << line << endl;
 		string id = "";
 		string name = "";
 		int age;
@@ -88,34 +62,26 @@ void read_stu(HashTable<Student> &h, HashTable2<string> & h2) {
 		int len = line.length();
 		int i;
 		id = line.substr(0, 18);
-		//v.push_back(id);
 		name = line.substr(19, 6);
 		
 		temp = line.substr(26, 2);
 		age = str_to_i(temp);
 
-		
 		temp = line[29];
 		if (temp[0] == '0') sex = 0;
 		else sex = 1;
 
-		//cout << id << " " << name << " " << age << " " << sex << endl;
 		Student stu(id, name, age, sex);
-		//Information inf(id, name, age, sex);
+		Student info(id, name, age, sex);
 		h.insert(stu);
-		h2.insert(id);
-		//line = "";
+		h2.insert(info);
+		totalNumber++;
 		if (infile.eof()) {
 			break;
-			//cin.get();
 		}
-		//cin.get();
-		
 	}
 
 	infile.close();
-	//cin.get();
-	//Student stu(id, name, age, sex);
 }
 
 void welcome() {
@@ -144,18 +110,16 @@ void command_tips() {
 }
 
 int main() {
+	//create_stu();
 	welcome();
 	command_tips();
 	cout << endl;
 	srand(time(0));
-	//create_stu();
+	
 	HashTable<Student> h;
-	HashTable2<string> table;
+	HashTable2<Student> table;
 	
-	read_stu(h, table);
-	
-	//h.print();
-	//h2.print();
+	//read_stu(h, table);
 	
 	string command;
 	while(cin >> command) {
@@ -176,7 +140,10 @@ int main() {
 						cout << "ID: " << student.getID() << endl;
 						cout << "Age: " << student.getAge() << endl;
 						cout << "Gender: " << (student.getSex() == 0? "Male":"Female") << endl <<  endl;
+					} else {
+						cout << "\nInserted failed: The system already contains the student" << endl;
 					}
+
 				}
 				break;
 			case 'R': 
@@ -199,18 +166,26 @@ int main() {
 				break;
 			case 'T':
 				{
+					cout << "Please wait for inputing the information from the file." << endl;
+					read_stu(h, table);
+					cout << "Input finished" << endl;
+					cout << "Tatal numbers of student: " << totalNumber << endl;
 					vector<list<Student> > ve = h.getList();
-					string s1 = (*(ve[rand() % ve.size()].begin())).getID();
-					clock_t start = clock();
-					h.findKey(s1);
-					clock_t end = clock();
-					cout << "Time_with_Linked_list: " << (double)((double)(end - start) / CLOCKS_PER_SEC) << endl;
-
-					clock_t start1 = clock();
-					table.contains(s1); //search for the student in the table and output the result
-					clock_t end1 = clock();
-					double cpu_time_used = ((double)(end1 - start1)) / CLOCKS_PER_SEC; //compute the time for searching
-					cout << "Time_with_Open_Address: " << cpu_time_used << endl;
+					double ave_CHI = 0, ave_OPEN = 0;
+					int num = 30;
+					for (int i = 0; i < num; i++) {
+						list<Student>::iterator p = ve[rand() % ve.size()].end();
+						string s1 = (*(--p)).getID();
+						double CHAIN, OPEN;
+						ave_CHI += (double)h.cal_time(s1) ;
+						ave_OPEN += (double)table.cal_time(s1);
+						cout << "chaning: " << setw(8) << (double)h.cal_time(s1) << " s" << "   open addressing: " << setw(8) << (double)table.cal_time(s1) << " s" << endl;
+						Sleep(100);
+					}
+					cout << "Average time with chaining: " << (double)(ave_CHI / num) << " s"<< endl;
+					cout << "Average time with open addressing: " << (double)(ave_OPEN / num) << " s" << endl;
+					
+					
 					cout << endl;
 				} break;
 			default:
@@ -226,11 +201,6 @@ int main() {
 	}
 
 
-	vector<list<Student> > ve = h.getList();
-	string s1 = (*(ve[rand() % ve.size()].begin())).getID();
-	string s2 = (*(ve[rand() % ve.size()].begin())).getID();
-
-	
 	//574829672648958765 stella 19 1
 	system("pause");
 	return 0;

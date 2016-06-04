@@ -21,9 +21,6 @@
     <ClInclude Include="Student.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="HashOpenAddress.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="HashTable2.h">
       <Filter>头文件</Filter>
     </ClInclude>
